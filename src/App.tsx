@@ -1,19 +1,23 @@
-import { useCounterStore } from './stores/counterStore';
-import ThemeSwitcher from './components/ThemeSwitcher';
-import { Button } from './components/ui/button';
+import DataGrid from '@/components/DataGrid/DataGrid';
+import { generateMockData } from '@/components/DataGrid/mockData';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import { useColumns } from './components/DataGrid/useColumn';
+import { useMemo } from 'react';
 
 const App = () => {
-  const { count, increment, decrement } = useCounterStore();
+  const columns = useMemo(useColumns, []);
+  const rows = useMemo(() => generateMockData(10000), []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold mb-4">Counter: {count}</h1>
-      <div className="space-x-4 mb-6">
-        <Button onClick={increment}>Increment</Button>
-        <Button onClick={decrement}>Decrement</Button>
+    <main className="min-h-screen p-5">
+      <header className="flex justify-end">
+        <ThemeSwitcher />
+      </header>
+      <div className="p-10 flex justify-center items-center flex-col">
+        <h2 className="text-center text-4xl">1. Data Grid</h2>
+        <DataGrid columns={columns} rows={rows} />
       </div>
-      <ThemeSwitcher />
-    </div>
+    </main>
   );
 };
 
