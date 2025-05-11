@@ -1,22 +1,32 @@
-import DataGrid from '@/components/DataGrid/DataGrid';
-import { generateMockData } from '@/components/DataGrid/mockData';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
-import { useColumns } from './components/DataGrid/useColumn';
-import { useMemo } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import { DataGridDemo } from '@/pages/data-grid-demo';
+import { ModalSystemDemo } from '@/pages/modal-system-demo';
+import { Home } from '@/pages/home';
+import { Button } from '@/components/ui/button';
 
 const App = () => {
-  const columns = useMemo(useColumns, []);
-  const rows = useMemo(() => generateMockData(10000), []);
-
   return (
-    <main className="min-h-screen p-5">
-      <header className="flex justify-end">
+    <main className="min-h-screen">
+      <header className="flex justify-between border-b bg-foreground/5 p-4">
+        <nav>
+          <Button variant="link" asChild>
+            <Link to="/">Home</Link>
+          </Button>
+          <Button variant="link" asChild>
+            <Link to="/data-grid">Data Grid</Link>
+          </Button>
+          <Button variant="link" asChild>
+            <Link to="/modal-system">Modal System</Link>
+          </Button>
+        </nav>
         <ThemeSwitcher />
-      </header>
-      <div className="p-10 flex justify-center items-center flex-col">
-        <h2 className="text-center text-4xl">1. Data Grid</h2>
-        <DataGrid columns={columns} rows={rows} />
-      </div>
+      </header>{' '}
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="data-grid" element={<DataGridDemo />} />
+        <Route path="modal-system" element={<ModalSystemDemo />} />
+      </Routes>
     </main>
   );
 };

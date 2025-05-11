@@ -31,7 +31,6 @@ export const useThemeStore = create<ThemeState>()(
   )
 );
 
-// Listen for system theme changes when theme is 'system'
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {
   const { theme } = useThemeStore.getState();
   if (theme === 'system') {
@@ -49,5 +48,4 @@ window
   .matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', handleSystemThemeChange);
 
-// Initialize theme on load
 useThemeStore.getState().setTheme(useThemeStore.getState().theme);
