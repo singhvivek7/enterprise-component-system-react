@@ -7,7 +7,7 @@ export const HierarchicalTreeDemo = () => {
 
   return (
     <section className="p-10 flex justify-center items-center flex-col">
-      <h1 className="text-center text-4xl mb-6">5. Hierarchical Tree</h1>
+      <h1 className="text-center text-4xl mb-6">4. Hierarchical Tree</h1>
       <div className="p-4 border rounded-lg shadow-sm w-full min-w-md bg-background">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-medium">File Explorer</h2>

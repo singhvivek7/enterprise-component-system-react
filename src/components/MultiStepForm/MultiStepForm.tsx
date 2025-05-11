@@ -75,7 +75,7 @@ const MultiStepForm = ({ steps, onSubmit }: MultiStepFormProps) => {
             <div
               className={cn(
                 'h-2 mt-2 rounded-full',
-                index <= currentStep ? 'bg-primary' : 'bg-muted'
+                index <= currentStep ? 'bg-emerald-600' : 'bg-muted'
               )}
             />
           </div>
@@ -105,7 +105,13 @@ const MultiStepForm = ({ steps, onSubmit }: MultiStepFormProps) => {
               Next
             </Button>
           ) : (
-            <Button type="button" onClick={handleSubmit}>
+            <Button
+              type="button"
+              className="bg-emerald-600 hover:bg-emerald-500"
+              onClick={() => {
+                throw new Error('Test');
+                // handleSubmit();
+              }}>
               Submit
             </Button>
           )}
