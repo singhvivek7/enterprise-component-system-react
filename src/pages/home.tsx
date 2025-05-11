@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Blocks, Code } from 'lucide-react';
+import { ROUTES } from '@/lib/routes';
 
 const techStack = [
   {
@@ -55,18 +56,16 @@ export const Home = () => {
             Components
           </h3>
           <div className="flex flex-wrap gap-3 mb-8 justify-center">
-            <Button
-              asChild
-              className="bg-emerald-600 hover:bg-emerald-700 gap-2 px-5 py-6"
-              size="lg">
-              <Link to="/data-grid">1. Data Grid</Link>
-            </Button>
-            <Button
-              asChild
-              className="bg-emerald-600 hover:bg-emerald-700 gap-2 px-5 py-6"
-              size="lg">
-              <Link to="/modal-system">2. Modal System</Link>
-            </Button>
+            {ROUTES.slice(1).map(({ href, label }, idx) => (
+              <Button
+                asChild
+                className="bg-emerald-600 hover:bg-emerald-700 gap-2 px-5 py-6"
+                size="lg">
+                <Link to={href}>
+                  {idx + 1}. {label}
+                </Link>
+              </Button>
+            ))}
           </div>
         </div>
 
