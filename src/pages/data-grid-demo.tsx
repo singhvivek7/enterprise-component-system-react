@@ -8,9 +8,9 @@ export const DataGridDemo = () => {
   const rows = useMemo(() => generateMockData(10000), []);
 
   return (
-    <div className="p-10 flex justify-center items-center flex-col">
+    <section className="p-10 flex justify-center items-center flex-col">
       <h2 className="text-center text-4xl mb-6">1. Data Grid</h2>
       <DataGrid columns={columns} rows={rows} />
-    </div>
+    </section>
   );
 };

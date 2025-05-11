@@ -79,10 +79,10 @@ export const MultiStepFormDemo = () => {
   };
 
   return (
-    <main>
+    <section>
       <h2 className="text-center text-4xl mt-12 mb-6">3. Multi-step Form</h2>
       <MultiStepForm steps={steps} onSubmit={handleFormSubmit} />
       <div></div>
-    </main>
+    </section>
   );
 };

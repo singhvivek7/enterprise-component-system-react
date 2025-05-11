@@ -4,6 +4,7 @@ import { DataGridDemo } from '@/pages/data-grid-demo';
 import { ModalSystemDemo } from '@/pages/modal-system-demo';
 import { MultiStepFormDemo } from '@/pages/multi-step-form-demo';
 import { Home } from '@/pages/home';
+import { HierarchicalTreeDemo } from '@/pages/hierarchical-tree-demo';
 import { Button } from '@/components/ui/button';
 import { ROUTES, ROUTES_ENUM } from '@/lib/routes';
 
@@ -28,6 +29,10 @@ const App = () => {
         <Route
           path={ROUTES_ENUM.MULTI_STEP_FORM}
           element={<MultiStepFormDemo />}
+        />
+        <Route
+          path={ROUTES_ENUM.HIERARCHICAL_TREE}
+          element={<HierarchicalTreeDemo />}
         />
       </Routes>
     </main>

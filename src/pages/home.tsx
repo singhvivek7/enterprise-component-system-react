@@ -55,12 +55,13 @@ export const Home = () => {
             <Blocks className="text-emerald-600" size={24} />
             Components
           </h3>
-          <div className="flex flex-wrap gap-3 mb-8 justify-center">
+          <div className="flex flex-wrap gap-3 mb-8 justify-start">
             {ROUTES.slice(1).map(({ href, label }, idx) => (
               <Button
                 asChild
                 className="bg-emerald-600 hover:bg-emerald-700 gap-2 px-5 py-6"
-                size="lg">
+                size="lg"
+                key={label}>
                 <Link to={href}>
                   {idx + 1}. {label}
                 </Link>
@@ -77,7 +78,7 @@ export const Home = () => {
             </h2>
             <div className="space-y-3">
               {techStack.map(({ name, description }) => (
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3" key={name}>
                   <div className="w-2 h-2 rounded-full bg-emerald-600"></div>
                   <div className="text-foreground flex-1">
                     <span className="font-medium">{name}</span>
