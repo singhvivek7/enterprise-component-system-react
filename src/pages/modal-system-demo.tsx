@@ -12,8 +12,7 @@ export const ModalSystemDemo = () => {
         <div>
           <p>This is a modal with {animation} animation.</p>
           <Button
-            variant="outline"
-            className="cursor-pointer"
+            className="cursor-pointer mt-2"
             onClick={() =>
               openModal({
                 title: 'Nested Modal',
@@ -36,7 +35,7 @@ export const ModalSystemDemo = () => {
   return (
     <ModalSystem>
       <h2 className="text-center text-4xl mt-12 mb-6">2. Modal System</h2>
-      <div className="flex space-x-4">
+      <div className="flex justify-center flex-col items-center gap-5">
         <Button
           className="cursor-pointer"
           onClick={() => handleOpenModal('fade')}>

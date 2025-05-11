@@ -18,12 +18,12 @@ const ModalSystem = ({ children }: ModalSystemProps) => {
   }, []);
 
   return (
-    <>
+    <div className="px-10">
       {children}
       {modals.map((modal, index) => (
         <ModalPortal key={modal.id} {...modal} index={index} />
       ))}
-    </>
+    </div>
   );
 };
 

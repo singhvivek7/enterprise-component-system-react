@@ -21,7 +21,8 @@ const App = () => {
           </Button>
         </nav>
         <ThemeSwitcher />
-      </header>{' '}
+      </header>
+
       <Routes>
         <Route index element={<Home />} />
         <Route path="data-grid" element={<DataGridDemo />} />
