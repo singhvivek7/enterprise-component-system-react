@@ -5,6 +5,7 @@ import { ModalSystemDemo } from '@/pages/modal-system-demo';
 import { MultiStepFormDemo } from '@/pages/multi-step-form-demo';
 import { Home } from '@/pages/home';
 import { HierarchicalTreeDemo } from '@/pages/hierarchical-tree-demo';
+import { DashboardDemo } from '@/pages/dashboard-demo';
 import { Button } from '@/components/ui/button';
 import { ROUTES, ROUTES_ENUM } from '@/lib/routes';
 
@@ -34,6 +35,7 @@ const App = () => {
           path={ROUTES_ENUM.HIERARCHICAL_TREE}
           element={<HierarchicalTreeDemo />}
         />
+        <Route path={ROUTES_ENUM.DASHBOARD} element={<DashboardDemo />} />
       </Routes>
     </main>
   );

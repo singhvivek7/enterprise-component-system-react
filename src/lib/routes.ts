@@ -19,6 +19,10 @@ export const ROUTES = [
     label: 'Hierarchical Tree',
     href: 'hierarchical-tree',
   },
+  {
+    label: 'Dashboard',
+    href: 'dashboard',
+  },
 ];
 
 export enum ROUTES_ENUM {
@@ -27,4 +31,5 @@ export enum ROUTES_ENUM {
   MODAL_SYSTEM = '/modal-system',
   MULTI_STEP_FORM = '/multi-step-form',
   HIERARCHICAL_TREE = '/hierarchical-tree',
+  DASHBOARD = '/dashboard',
 }
