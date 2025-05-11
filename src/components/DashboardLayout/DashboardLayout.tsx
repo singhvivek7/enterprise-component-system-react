@@ -101,7 +101,11 @@ const DashboardLayout = () => {
 
       <main className="overflow-auto p-4">
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="panels">
+          <Droppable
+            droppableId="panels"
+            isDropDisabled={false}
+            isCombineEnabled
+            ignoreContainerClipping>
             {provided => (
               <div
                 {...provided.droppableProps}

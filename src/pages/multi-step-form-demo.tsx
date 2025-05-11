@@ -73,7 +73,7 @@ const steps: FormStep[] = [
   },
 ];
 
-export const MultiStepFormDemo = () => {
+const MultiStepFormDemo = () => {
   const handleFormSubmit = (data: any) => {
     alert('Form Submitted: ' + JSON.stringify(data, null, 2));
   };
@@ -86,3 +86,5 @@ export const MultiStepFormDemo = () => {
     </section>
   );
 };
+
+export default MultiStepFormDemo;

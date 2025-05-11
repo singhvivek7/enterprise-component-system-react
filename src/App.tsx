@@ -1,14 +1,18 @@
+import { lazy, Suspense } from 'react';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { Link, Route, Routes } from 'react-router-dom';
-import { DataGridDemo } from '@/pages/data-grid-demo';
-import { ModalSystemDemo } from '@/pages/modal-system-demo';
-import { MultiStepFormDemo } from '@/pages/multi-step-form-demo';
-import { Home } from '@/pages/home';
-import { HierarchicalTreeDemo } from '@/pages/hierarchical-tree-demo';
-import { DashboardDemo } from '@/pages/dashboard-demo';
 import { Button } from '@/components/ui/button';
 import { ROUTES, ROUTES_ENUM } from '@/lib/routes';
 import ErrorBoundary from '@/components/ErrorBoundary';
+
+const DataGridDemo = lazy(() => import('@/pages/data-grid-demo'));
+const ModalSystemDemo = lazy(() => import('@/pages/modal-system-demo'));
+const MultiStepFormDemo = lazy(() => import('@/pages/multi-step-form-demo'));
+const HierarchicalTreeDemo = lazy(
+  () => import('@/pages/hierarchical-tree-demo')
+);
+const DashboardDemo = lazy(() => import('@/pages/dashboard-demo'));
+const Home = lazy(() => import('@/pages/home'));
 
 const App = () => {
   return (
@@ -30,41 +34,51 @@ const App = () => {
           <Route
             path={ROUTES_ENUM.DATA_GRID}
             element={
-              <ErrorBoundary componentName="Data Grid">
-                <DataGridDemo />
-              </ErrorBoundary>
+              <Suspense fallback={<div>Loading Data Grid...</div>}>
+                <ErrorBoundary componentName="Data Grid">
+                  <DataGridDemo />
+                </ErrorBoundary>
+              </Suspense>
             }
           />
           <Route
             path={ROUTES_ENUM.MODAL_SYSTEM}
             element={
-              <ErrorBoundary componentName="Modal System">
-                <ModalSystemDemo />
-              </ErrorBoundary>
+              <Suspense fallback={<div>Loading Modal System...</div>}>
+                <ErrorBoundary componentName="Modal System">
+                  <ModalSystemDemo />
+                </ErrorBoundary>
+              </Suspense>
             }
           />
           <Route
             path={ROUTES_ENUM.MULTI_STEP_FORM}
             element={
-              <ErrorBoundary componentName="Multi Step Form">
-                <MultiStepFormDemo />
-              </ErrorBoundary>
+              <Suspense fallback={<div>Loading Multi Step Form...</div>}>
+                <ErrorBoundary componentName="Multi Step Form">
+                  <MultiStepFormDemo />
+                </ErrorBoundary>
+              </Suspense>
             }
           />
           <Route
             path={ROUTES_ENUM.HIERARCHICAL_TREE}
             element={
-              <ErrorBoundary componentName="Hierarchical Tree">
-                <HierarchicalTreeDemo />
-              </ErrorBoundary>
+              <Suspense fallback={<div>Loading Hierarchical Tree...</div>}>
+                <ErrorBoundary componentName="Hierarchical Tree">
+                  <HierarchicalTreeDemo />
+                </ErrorBoundary>
+              </Suspense>
             }
           />
           <Route
             path={ROUTES_ENUM.DASHBOARD}
             element={
-              <ErrorBoundary componentName="Dashboard">
-                <DashboardDemo />
-              </ErrorBoundary>
+              <Suspense fallback={<div>Loading Dashboard...</div>}>
+                <ErrorBoundary componentName="Dashboard">
+                  <DashboardDemo />
+                </ErrorBoundary>
+              </Suspense>
             }
           />
         </Routes>

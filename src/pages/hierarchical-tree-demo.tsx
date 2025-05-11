@@ -2,7 +2,7 @@ import HierarchicalTree from '@/components/HierarchicalTree/HierarchicalTree';
 import { Button } from '@/components/ui/button';
 import { treeStore } from '@/stores/treeStore';
 
-export const HierarchicalTreeDemo = () => {
+const HierarchicalTreeDemo = () => {
   const { explorer, resetExplorer } = treeStore();
 
   return (
@@ -25,3 +25,5 @@ export const HierarchicalTreeDemo = () => {
     </section>
   );
 };
+
+export default HierarchicalTreeDemo;

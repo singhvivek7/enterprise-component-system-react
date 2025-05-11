@@ -3,7 +3,7 @@ import DataGrid from '@/components/DataGrid/DataGrid';
 import { generateMockData } from '@/components/DataGrid/mockData';
 import { useColumns } from '@/components/DataGrid/useColumn';
 
-export const DataGridDemo = () => {
+const DataGridDemo = () => {
   const columns = useMemo(useColumns, []);
   const rows = useMemo(() => generateMockData(10000), []);
 
@@ -14,3 +14,5 @@ export const DataGridDemo = () => {
     </section>
   );
 };
+
+export default DataGridDemo;

@@ -2,7 +2,7 @@ import ModalSystem from '@/components/ModalSystem/ModalSystem';
 import { useModal } from '@/stores/modalStore';
 import { Button } from '@/components/ui/button';
 
-export const ModalSystemDemo = () => {
+const ModalSystemDemo = () => {
   const { openModal } = useModal();
 
   const handleOpenModal = (animation: 'fade' | 'slide' | 'scale') => {
@@ -55,3 +55,5 @@ export const ModalSystemDemo = () => {
     </ModalSystem>
   );
 };
+
+export default ModalSystemDemo;
